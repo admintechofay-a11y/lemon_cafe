@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F8F1E6;
+  --cream-2: #F2E9DA;
+  --paper: #FFFBF4;
+  --ink: #1C1713;
+  --ink-soft: rgba(28, 23, 19, 0.72);
+  --gold: #C8AE5B;
+  --blush: #F0C4C6;
+  --copper-a: #D29A5C;
+  --copper-b: #B0682F;
+  --line: rgba(28, 23, 19, 0.10);
+
+  --font-serif: 'Newsreader', 'Source Serif 4', 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Base resets: clean, calm, airy, warm cream background */
+html {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Fluid Editorial Hero Headline */
+.text-editorial-hero {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "opsz" 72;
+}
+
+/* Section H2 Headline */
+.text-editorial-h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--ink);
+  font-feature-settings: "opsz" 72;
+}
+
+/* Editorial Body Text */
+.text-editorial-body {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.5vw + 0.95rem, 1.0625rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* Lenis smooth scrolling integration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Light-leak / Prism Glare Overlay (faint blurred streaks at 5-7% opacity) */
+.prism-glare-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 35;
+  opacity: 0.06;
+  background: 
+    radial-gradient(ellipse 60% 50% at 75% 15%, rgba(200, 174, 91, 0.75), transparent 65%),
+    linear-gradient(135deg, transparent 20%, rgba(255, 255, 255, 0.9) 35%, transparent 45%),
+    linear-gradient(145deg, transparent 50%, rgba(240, 196, 198, 0.75) 65%, transparent 75%),
+    radial-gradient(circle at 45% 85%, rgba(210, 154, 92, 0.6), transparent 50%);
+  filter: blur(48px);
+  mix-blend-mode: multiply;
+}
+
+/* Faint paper grain overlay at 3% opacity */
+.paper-grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 36;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Exact Reference Graphic Blobs */
+.blob-mustard-gold {
+  background-color: var(--gold);
+  border-radius: 65% 35% 58% 42% / 46% 62% 38% 54%;
+}
+
+.blob-blush-pink {
+  background-color: var(--blush);
+  border-radius: 46% 54% 38% 62% / 58% 42% 58% 42%;
+}
+
+/* Reference Buttons - Copper Pill & Outline Pill */
+.btn-copper-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 30px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #FFFBF4;
+  background: linear-gradient(135deg, var(--copper-a) 0%, var(--copper-b) 100%);
+  box-shadow: 0 10px 24px -4px rgba(176, 104, 47, 0.38), 0 3px 8px -2px rgba(176, 104, 47, 0.20);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-copper-pill:hover {
+  transform: translateY(-1.5px);
+  filter: brightness(1.04);
+  box-shadow: 0 14px 28px -4px rgba(176, 104, 47, 0.46), 0 4px 10px -2px rgba(176, 104, 47, 0.25);
+}
+
+.btn-outline-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 30px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  background-color: transparent;
+  border: 1px solid var(--ink);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-pill:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Legacy aliases for compatibility */
+.btn-editorial-primary {
+  @apply btn-copper-pill;
+}
+.btn-editorial-secondary {
+  @apply btn-outline-pill;
+}
+
+/* Nav Outlined Pill CTA */
+.nav-pill-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 22px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1A1A1A;
+  border: 1px solid rgba(26, 26, 26, 0.75);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.nav-pill-cta:hover {
+  background-color: #1A1A1A;
+  color: #FBF6E9;
+  border-color: #1A1A1A;
+}
+
+/* Editorial Photo Collage Cards (Corners rounded 4-8px like reference, soft shadow) */
+.collage-photo-main {
+  border-radius: 6px;
+  box-shadow: 0 18px 40px -10px rgba(26, 26, 26, 0.14), 0 2px 8px -2px rgba(26, 26, 26, 0.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.collage-photo-tall {
+  border-radius: 6px;
+  box-shadow: 0 20px 45px -12px rgba(26, 26, 26, 0.16), 0 3px 10px -3px rgba(26, 26, 26, 0.06);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.collage-photo-small {
+  border-radius: 6px;
+  box-shadow: 0 14px 32px -8px rgba(26, 26, 26, 0.14), 0 2px 6px -2px rgba(26, 26, 26, 0.04);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+/* Mouse Scroll Indicator */
+.mouse-scroll-indicator {
+  width: 22px;
+  height: 36px;
+  border: 1.5px solid rgba(26, 26, 26, 0.55);
+  border-radius: 9999px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mouse-scroll-dot {
+  width: 3px;
+  height: 7px;
+  background-color: #1A1A1A;
+  border-radius: 9999px;
+  margin-top: 6px;
+  animation: mouseDotBob 2s ease-in-out infinite;
+}
+
+@keyframes mouseDotBob {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.3;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build artifacts
+dist/
+client/dist/
+
+# Environment variables & secrets
+.env
+.env.*
+server/.env
+
+# Temporary / testing scripts
+take_screenshot.cjs
+hero_match_*.png
+hero_chrome_*.png
+screenshot.png
+
+# Large raw archive (optimized assets are committed in client/public/assets)
+pic.zip
+
+# System & logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Lemon Slice & Pool Glow Favicon -->
+  <defs>
+    <linearGradient id="lemonGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE570" />
+      <stop offset="60%" stop-color="#E8B923" />
+      <stop offset="100%" stop-color="#C49712" />
+    </linearGradient>
+    <linearGradient id="poolTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D938E" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1A1A1A" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Lemon Background Circle -->
+  <circle cx="50" cy="50" r="44" fill="#FBF6E9" stroke="#E8B923" stroke-width="3" filter="url(#shadow)" />
+
+  <!-- Citrus Segments -->
+  <path d="M50 16 A34 34 0 0 1 74 26 L53 48 Z" fill="url(#lemonGold)" />
+  <path d="M78 30 A34 34 0 0 1 84 50 L53 50 Z" fill="url(#lemonGold)" />
+  <path d="M26 26 A34 34 0 0 1 50 16 L47 48 Z" fill="url(#lemonGold)" />
+  <path d="M16 50 A34 34 0 0 1 22 30 L47 50 Z" fill="url(#lemonGold)" />
+
+  <!-- Teal Pool Wave Base -->
+  <path d="M16 54 Q33 46 50 54 T84 54 A34 34 0 0 1 50 84 A34 34 0 0 1 16 54 Z" fill="url(#poolTeal)" />
+
+  <!-- Wave Ripple -->
+  <path d="M22 62 Q36 56 50 62 T78 62" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85" />
+
+  <!-- Fresh Olive Leaves on top -->
+  <path d="M50 12 C44 4 56 2 58 8 C58 12 52 14 50 12 Z" fill="#2F3A1F" />
+  <path d="M51 12 C57 5 69 7 67 13 C65 17 55 14 51 12 Z" fill="#42512D" />
+</svg>
