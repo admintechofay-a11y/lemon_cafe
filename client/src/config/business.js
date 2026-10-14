@@ -49,6 +49,10 @@ export const businessInfo = {
     teal: "#1F6F6B",
     charcoal: "#1A1A1A",
     blush: "#F7E1D7",
+  },
+  poweredBy: {
+    name: "Techofay Global Ventures",
+    url: "https://techofay-global-ventures.vercel.app/",
   }
 };
 

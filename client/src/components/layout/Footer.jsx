@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, ArrowUp, Star, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowUp, Star, Sparkles, ExternalLink } from 'lucide-react';
 import LemonLogo from '../common/LemonLogo';
 import { businessInfo } from '../../config/business';
 
@@ -174,6 +174,22 @@ export default function Footer() {
               Staff Portal
             </Link>
           </div>
+        </div>
+
+        {/* Powered by Techofay Global Ventures */}
+        <div className="mt-8 pt-6 border-t border-ink/8 flex items-center justify-center text-xs text-ink/60">
+          <p className="flex items-center gap-1.5 tracking-wide">
+            <span>Powered by</span>
+            <a
+              href={businessInfo.poweredBy?.url || "https://techofay-global-ventures.vercel.app/"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#C98B1B] hover:text-gold transition-colors inline-flex items-center gap-1 underline underline-offset-4 decoration-[#C98B1B]/40 hover:decoration-gold"
+            >
+              <span>{businessInfo.poweredBy?.name || "Techofay Global Ventures"}</span>
+              <ExternalLink className="w-3 h-3 text-[#C98B1B]" />
+            </a>
+          </p>
         </div>
       </div>
     </footer>

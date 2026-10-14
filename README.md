@@ -147,3 +147,5 @@ The venue administration suite is accessible directly at:
 
 ## 📄 License & Credits
 Designed and engineered for **Lemon — Café · Restaurant · Pool**, Sevasi Canal Road, Vadodara, Gujarat.
+
+Powered by [Techofay Global Ventures](https://techofay-global-ventures.vercel.app/).
