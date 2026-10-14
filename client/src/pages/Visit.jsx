@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import LemonSliceSvg from '../components/common/LemonSliceSvg';
 import { businessInfo, getLiveStatus } from '../config/business';
+import { API_BASE_URL } from '../config/api';
 
 export default function Visit() {
   const liveStatus = getLiveStatus();
@@ -50,7 +51,7 @@ export default function Visit() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/enquiries', {
+      const response = await fetch(`${API_BASE_URL}/enquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

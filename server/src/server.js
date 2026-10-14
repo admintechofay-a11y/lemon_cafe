@@ -72,6 +72,11 @@ app.use('/api/admin', adminRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`[Lemon Server]: Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-});
+// Start server if not running in Vercel serverless/services environment
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`[Lemon Server]: Running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+  });
+}
+
+export default app;

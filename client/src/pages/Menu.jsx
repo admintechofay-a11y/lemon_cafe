@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Sparkles, Download, Check, Star, Filter, Coffee, Utensils, Award } from 'lucide-react';
 import LemonSliceSvg from '../components/common/LemonSliceSvg';
 import { categoriesData, fallbackMenuItems } from '../config/menuData';
+import { API_BASE_URL } from '../config/api';
 
 export default function Menu() {
   const [categories, setCategories] = useState(categoriesData);
@@ -17,7 +18,7 @@ export default function Menu() {
   useEffect(() => {
     async function fetchMenu() {
       try {
-        const res = await fetch('http://localhost:5000/api/menu');
+        const res = await fetch(`${API_BASE_URL}/menu`);
         if (res.ok) {
           const json = await res.json();
           if (json.data && json.data.length > 0) {
